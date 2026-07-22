@@ -1,0 +1,233 @@
+<mvc:View
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+>
+    <Page
+        id="wizardReviewPage"
+        showHeader="false"
+    >
+        <content>
+            <!-- 1. DADOS DE ENDEREÇO -->
+            <form:SimpleForm
+                title="1. Dados de Endereço"
+                editable="false"
+                layout="ResponsiveGridLayout"
+            >
+                <form:content>
+                    <Label text="Documento" />
+                    <Link
+                        text="conta_de_luz.jpeg"
+                        href="https://example.com/conta_de_luz.jpeg"
+                        target="_blank"
+                    />
+                    <Label text="CEP" />
+                    <Text text="01451-907" />
+                    <Label text="Logradouro/Nº" />
+                    <HBox>
+                        <Text text="Avenida Brigadeiro Faria Lima" />
+                        <Text
+                            text="1912"
+                            class="sapUiTinyMarginBegin"
+                        />
+                    </HBox>
+                    <Label text="Complemento" />
+                    <Text text="Próximo ao Shopping Iguatemi" />
+                    <Label text="Bairro/Cidade" />
+                    <HBox>
+                        <Text text="Jardim Paulistano" />
+                        <Text
+                            text="São Paulo"
+                            class="sapUiTinyMarginBegin"
+                        />
+                    </HBox>
+                    <Label text="Estado" />
+                    <Text text="São Paulo (SP)" />
+                    <Link
+                        text="Editar"
+                        press="editEndereco"
+                    />
+                </form:content>
+            </form:SimpleForm>
+
+            <!-- 2. GRADUAÇÃO -->
+            <form:SimpleForm
+                title="2. Graduação"
+                editable="false"
+                layout="ResponsiveGridLayout"
+            >
+                <form:content>
+                    <Label text="Diploma" />
+                    <Link
+                        text="diploma.jpeg"
+                        href="https://example.com/diploma.jpeg"
+                        target="_blank"
+                    />
+                    <Label text="Nome do Diploma" />
+                    <Text text="Bacharel em Ciência da Computação" />
+                    <Label text="Instituição" />
+                    <Text text="Universidade de São Paulo (USP)" />
+                    <Label text="Ano de conclusão" />
+                    <Text text="2025" />
+                    <Link
+                        text="Editar"
+                        press="editGraduacao"
+                    />
+                </form:content>
+            </form:SimpleForm>
+
+            <!-- 3. DEPENDENTES -->
+            <form:SimpleForm
+                title="3. Dependentes"
+                editable="false"
+                layout="ResponsiveGridLayout"
+            >
+                <form:content>
+                    <Label text="Documento" />
+                    <Link
+                        text="certidao_nascimento.pdf"
+                        href="https://example.com/certidao_nascimento.pdf"
+                        target="_blank"
+                    />
+                    <Label text="Nome completo" />
+                    <Text text="Paulo Henrique da Silva" />
+                    <Label text="Nome da Mãe" />
+                    <Text text="Maria das Dores da Silva" />
+                    <Label text="Sexo" />
+                    <Text text="Masculino" />
+                    <Label text="Data de nascimento" />
+                    <Text text="01/01/2021" />
+                    <Label text="CPF" />
+                    <Text text="111.222.333-44" />
+                    <Label text="Cidade / Estado / País de nascimento" />
+                    <HBox>
+                        <Text text="São Paulo" />
+                        <Text
+                            text="SP"
+                            class="sapUiTinyMarginBegin"
+                        />
+                        <Text
+                            text="Brasil"
+                            class="sapUiTinyMarginBegin"
+                        />
+                    </HBox>
+                    <Label text="Número do CNS" />
+                    <Text text="123 4567 8901 2345" />
+                    <Label text="Elegível para IR" />
+                    <Text text="Sim" />
+                    <Link
+                        text="Editar"
+                        press="editDependentes"
+                    />
+                </form:content>
+            </form:SimpleForm>
+
+            <!-- 4. CÔNJUGE -->
+            <form:SimpleForm
+                title="4. Dados do Cônjuge"
+                editable="false"
+                layout="ResponsiveGridLayout"
+            >
+                <form:content>
+                    <Label text="Certidão de casamento" />
+                    <Link
+                        text="certidao_casamento.pdf"
+                        href="https://example.com/certidao_casamento.pdf"
+                        target="_blank"
+                    />
+                    <Label text="Nome completo" />
+                    <Text text="Ana Beatriz Santos" />
+                    <Label text="Data de nascimento" />
+                    <Text text="15/07/1990" />
+                    <Label text="Sexo" />
+                    <Text text="Feminino" />
+                    <Label text="CPF" />
+                    <Text text="987.654.321-00" />
+                    <Label text="Cidade / Estado / País de nascimento" />
+                    <HBox>
+                        <Text text="Campinas" />
+                        <Text
+                            text="SP"
+                            class="sapUiTinyMarginBegin"
+                        />
+                        <Text
+                            text="Brasil"
+                            class="sapUiTinyMarginBegin"
+                        />
+                    </HBox>
+                    <Label text="Número do CNS" />
+                    <Text text="987 6543 2109 8765" />
+                    <Label text="Elegível para IR" />
+                    <Text text="Sim" />
+                    <Link
+                        text="Editar"
+                        press="editConjuge"
+                    />
+                </form:content>
+            </form:SimpleForm>
+
+            <!-- 5. DIVÓRCIO -->
+            <form:SimpleForm
+                title="5. Divórcio / Ex-Cônjuge"
+                editable="false"
+                layout="ResponsiveGridLayout"
+            >
+                <form:content>
+                    <Label text="Certidão de divórcio" />
+                    <Link
+                        text="certidao_divorcio.pdf"
+                        href="https://example.com/certidao_divorcio.pdf"
+                        target="_blank"
+                    />
+                    <Label text="Nome completo" />
+                    <Text text="Carlos Eduardo Pereira" />
+                    <Label text="Data de nascimento" />
+                    <Text text="20/09/1985" />
+                    <Label text="CPF" />
+                    <Text text="222.333.444-55" />
+                    <Link
+                        text="Editar"
+                        press="editDivorcio"
+                    />
+                </form:content>
+            </form:SimpleForm>
+
+            <!-- 6. CONTATOS DE EMERGÊNCIA -->
+            <form:SimpleForm
+                title="6. Contatos de Emergência"
+                editable="false"
+                layout="ResponsiveGridLayout"
+            >
+                <form:content>
+                    <Label text="Nome completo" />
+                    <Text text="Maria Azevedo" />
+                    <Label text="Telefone" />
+                    <Text text="(11) 99999-8888" />
+                    <Label text="E-mail" />
+                    <Text text="maria.azevedo@email.com" />
+                    <Link
+                        text="Editar"
+                        press="editContatoEmergencia"
+                    />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button
+                        text="Enviar Solicitação"
+                        type="Emphasized"
+                        press="onSubmitRequest"
+                    />
+                    <Button
+                        text="Cancelar"
+                        press="onCancelReview"
+                    />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

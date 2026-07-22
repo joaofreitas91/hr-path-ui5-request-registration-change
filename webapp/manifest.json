@@ -1,0 +1,111 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "com.aegea.requestregistrationchange",
+    "type": "application",
+    "i18n": {
+      "bundleUrl": "i18n/i18n.properties"
+    },
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.6",
+      "toolsId": "9b329e7b-a983-4962-932f-333449b77730"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.141.3",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.aegea.requestregistrationchange.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.aegea.requestregistrationchange.view",
+        "async": true,
+        "viewPath": "com.aegea.requestregistrationchange.view"
+      },
+      "routes": [
+        {
+          "name": "RouteForm",
+          "pattern": ":?query:",
+          "target": [
+            "TargetForm"
+          ]
+        },
+        {
+          "name": "RouteReview",
+          "pattern": "/review",
+          "target": [
+            "TargetReview"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetForm": {
+          "id": "Form",
+          "name": "Form"
+        },
+        "TargetReview": {
+          "id": "Review",
+          "name": "Review"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.aegea.requestregistrationchange.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

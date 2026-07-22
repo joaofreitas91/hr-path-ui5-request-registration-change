@@ -1,0 +1,807 @@
+<mvc:View
+    controllerName="com.aegea.requestregistrationchange.controller.Form"
+    height="100%"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="wizardContentPage"
+        showHeader="false"
+    >
+        <content>
+            <Wizard
+                id="requestRegistrationChangeWizard"
+                class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
+                complete="wizardCompletedHandler"
+            >
+                <WizardStep
+                    id="ProductTypeStep"
+                    title="Dados de endereço"
+                    validated="true"
+                >
+                    <form:Form
+                        editable="true"
+                        ariaLabelledBy="Title1"
+                    >
+                        <form:layout>
+                            <form:ResponsiveGridLayout
+                                labelSpanXL="4"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="0"
+                                emptySpanL="4"
+                                emptySpanM="0"
+                                emptySpanS="0"
+                                columnsXL="2"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </form:layout>
+                        <form:formContainers>
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement label="Documento">
+                                        <form:fields>
+                                            <u:FileUploader
+                                                placeholder="conta_de_luz.jpeg"
+                                                tooltip="Comprovante de residência (Luz ou Água)"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement label="CEP">
+                                        <form:fields>
+                                            <Input placeholder="01451-907">
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL2 L1 M3 S4"
+                                                    />
+                                                </layoutData>
+                                            </Input>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="Logradouro/Nº">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Avenida Brigadeiro Faria Lima"
+                                            />
+                                            <Input placeholder="1912">
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL2 L1 M3 S4"
+                                                    />
+                                                </layoutData>
+                                            </Input>
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="Complemento">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Próximo ao Shopping Iguatemi"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="Bairro/Cidade">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Jardim Paulistano"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL2 L1 M3 S4"
+                                                    />
+                                                </layoutData>
+                                            </Input>
+                                            <Input placeholder="São Paulo" />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="Estado">
+                                        <form:fields>
+                                            <Select
+                                                width="100%"
+                                                selectedKey="Brasil"
+                                            >
+                                                <items>
+                                                    <core:Item
+                                                        text="Brasil"
+                                                        key="Brasil"
+                                                    />
+                                                    <core:Item
+                                                        text="Alemanha"
+                                                        key="Alemanha"
+                                                    />
+                                                    <core:Item
+                                                        text="USA"
+                                                        key="USA"
+                                                    />
+                                                    <core:Item
+                                                        text="Inglaterra"
+                                                        key="Inglaterra"
+                                                    />
+                                                </items>
+                                            </Select>
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+                </WizardStep>
+                <WizardStep title="Graduação">
+                    <form:Form
+                        editable="true"
+                        ariaLabelledBy="Title1"
+                    >
+                        <form:layout>
+                            <form:ResponsiveGridLayout
+                                labelSpanXL="4"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="0"
+                                emptySpanL="4"
+                                emptySpanM="0"
+                                emptySpanS="0"
+                                columnsXL="2"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </form:layout>
+                        <form:formContainers>
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement label="Diploma">
+                                        <form:fields>
+                                            <u:FileUploader
+                                                placeholder="diploma.jpeg"
+                                                tooltip="Anexe o diploma"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement label="Nome do Diploma">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Bacharel em ciência da computação"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="Instituição">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Universidade de São Paulo (USP)"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="Ano de conclusão">
+                                        <form:fields>
+                                            <DatePicker
+                                                placeholder="2025"
+                                                value="{
+                                                    'value': '2025',
+                                                    'type': 'sap.ui.model.type.Date',
+                                                    'formatOptions': {
+                                                        'pattern': 'yyyy'
+                                                    }
+                                                }"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+                </WizardStep>
+                <WizardStep
+                    validated="true"
+                    title="Dependentes"
+                >
+                    <form:Form
+                        editable="true"
+                        ariaLabelledBy="TitleDependente"
+                    >
+                        <form:layout>
+                            <form:ResponsiveGridLayout
+                                labelSpanXL="4"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="0"
+                                emptySpanL="4"
+                                emptySpanM="0"
+                                emptySpanS="0"
+                                columnsXL="2"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </form:layout>
+
+                        <form:formContainers>
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement label="Documento">
+                                        <form:fields>
+                                            <u:FileUploader
+                                                placeholder="certidao_nascimento.pdf"
+                                                tooltip="Anexe um documento oficial do dependente"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement label="Nome completo">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Digite o nome completo"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Nome completo da Mãe"
+                                    >
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Digite o nome completo da mãe"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement label="Sexo">
+                                        <form:fields>
+                                            <Select width="100%">
+                                                <items>
+                                                    <core:Item
+                                                        key="M"
+                                                        text="Masculino"
+                                                    />
+                                                    <core:Item
+                                                        key="F"
+                                                        text="Feminino"
+                                                    />
+                                                </items>
+                                            </Select>
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Data de nascimento"
+                                    >
+                                        <form:fields>
+                                            <DatePicker
+                                                placeholder="dd/mm/aaaa"
+                                                displayFormat="dd/MM/yyyy"
+                                                valueFormat="yyyy-MM-dd"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement label="CPF">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="000.000.000-00"
+                                                valueLiveUpdate="true"
+                                                liveChange=".onCpfMaskChange"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Cidade de nascimento"
+                                    >
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Ex: São Paulo"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Estado de nascimento"
+                                    >
+                                        <form:fields>
+                                            <Select width="100%">
+                                                <items>
+                                                    <core:Item
+                                                        key="SP"
+                                                        text="São Paulo"
+                                                    />
+                                                    <core:Item
+                                                        key="RJ"
+                                                        text="Rio de Janeiro"
+                                                    />
+                                                    <core:Item
+                                                        key="MG"
+                                                        text="Minas Gerais"
+                                                    />
+                                                    <core:Item
+                                                        key="RS"
+                                                        text="Rio Grande do Sul"
+                                                    />
+                                                </items>
+                                            </Select>
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="País de nascimento"
+                                    >
+                                        <form:fields>
+                                            <Select width="100%">
+                                                <items>
+                                                    <core:Item
+                                                        key="BR"
+                                                        text="Brasil"
+                                                    />
+                                                    <core:Item
+                                                        key="US"
+                                                        text="Estados Unidos"
+                                                    />
+                                                    <core:Item
+                                                        key="DE"
+                                                        text="Alemanha"
+                                                    />
+                                                    <core:Item
+                                                        key="UK"
+                                                        text="Reino Unido"
+                                                    />
+                                                </items>
+                                            </Select>
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Número do cartão nacional do seguro-saúde"
+                                    >
+                                        <form:fields>
+                                            <Input
+                                                placeholder="000 0000 0000 0000"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Elegível para desconto de IR"
+                                    >
+                                        <form:fields>
+                                            <CheckBox text="Sim" />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement>
+                                        <form:fields>
+                                            <Button
+                                                text="Adicionar"
+                                                type="Emphasized"
+                                                press=".onAddDependente"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="L1 M1 S1"
+                                                        moveForward="L7"
+                                                        linebreak="true"
+                                                    />
+                                                </layoutData>
+                                            </Button>
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+
+                    <Table
+                        inset="false"
+                        width="auto"
+                        class="sapUiLargeMarginBottom"
+                    >
+                        <columns>
+                            <Column>
+                                <Text text="Nome Completo" />
+                            </Column>
+                            <Column>
+                                <Text text="CPF" />
+                            </Column>
+                            <Column>
+                                <Text text="Data Nasc." />
+                            </Column>
+                            <Column>
+                                <Text text="Sexo" />
+                            </Column>
+                            <Column>
+                                <Text text="Desconto IR" />
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="Paulo" />
+                                    <Text text="111.222.333-44" />
+                                    <Text text="01/01/2021" />
+                                    <Text text="Masculino" />
+                                    <Text text="Sim" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </WizardStep>
+                <WizardStep
+                    validated="true"
+                    title="Dados do cônjuge"
+                >
+                    <form:Form editable="true">
+                        <form:layout>
+                            <form:ResponsiveGridLayout
+                                labelSpanXL="4"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="0"
+                                emptySpanL="4"
+                                emptySpanM="0"
+                                emptySpanS="0"
+                                columnsXL="2"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </form:layout>
+
+                        <form:formContainers>
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement
+                                        label="Anexo Certidão de casamento"
+                                    >
+                                        <form:fields>
+                                            <u:FileUploader
+                                                placeholder="certidao_casamento.pdf"
+                                                tooltip="Anexe a certidão de casamento"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement label="Nome completo">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Digite o nome completo"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Data de Nascimento"
+                                    >
+                                        <form:fields>
+                                            <DatePicker
+                                                placeholder="dd/mm/aaaa"
+                                                displayFormat="dd/MM/yyyy"
+                                                valueFormat="yyyy-MM-dd"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement label="Sexo">
+                                        <form:fields>
+                                            <Select
+                                                id="selectSexoConjuge"
+                                                width="100%"
+                                            >
+                                                <items>
+                                                    <core:Item
+                                                        key="M"
+                                                        text="Masculino"
+                                                    />
+                                                    <core:Item
+                                                        key="F"
+                                                        text="Feminino"
+                                                    />
+                                                </items>
+                                            </Select>
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement label="CPF">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="000.000.000-00"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Cidade de Nascimento"
+                                    >
+                                        <form:fields>
+                                            <Input placeholder="São Paulo" />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Estado de Nascimento"
+                                    >
+                                        <form:fields>
+                                            <Select width="100%">
+                                                <items>
+                                                    <core:Item
+                                                        key="SP"
+                                                        text="São Paulo"
+                                                    />
+                                                    <core:Item
+                                                        key="RJ"
+                                                        text="Rio de Janeiro"
+                                                    />
+                                                    <core:Item
+                                                        key="MG"
+                                                        text="Minas Gerais"
+                                                    />
+                                                    <core:Item
+                                                        key="RS"
+                                                        text="Rio Grande do Sul"
+                                                    />
+                                                </items>
+                                            </Select>
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="País de Nascimento"
+                                    >
+                                        <form:fields>
+                                            <Select width="100%">
+                                                <items>
+                                                    <core:Item
+                                                        key="BR"
+                                                        text="Brasil"
+                                                    />
+                                                    <core:Item
+                                                        key="US"
+                                                        text="Estados Unidos"
+                                                    />
+                                                    <core:Item
+                                                        key="DE"
+                                                        text="Alemanha"
+                                                    />
+                                                    <core:Item
+                                                        key="UK"
+                                                        text="Reino Unido"
+                                                    />
+                                                </items>
+                                            </Select>
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Número do cartão nacional do seguro-saúde"
+                                    >
+                                        <form:fields>
+                                            <Input
+                                                placeholder="000 0000 0000 0000"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+
+                                    <form:FormElement
+                                        label="Elegível para desconto de imposto de renda"
+                                    >
+                                        <form:fields>
+                                            <CheckBox text="Sim" />
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+                </WizardStep>
+                <WizardStep
+                    validated="true"
+                    title="Divorcio - Dados do ex-cônjuge"
+                >
+                    <form:Form editable="true">
+                        <form:layout>
+                            <form:ResponsiveGridLayout
+                                labelSpanXL="4"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="0"
+                                emptySpanL="4"
+                                emptySpanM="0"
+                                emptySpanS="0"
+                                columnsXL="2"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </form:layout>
+
+                        <form:formContainers>
+                            <form:FormContainer>
+                                <form:FormElement
+                                    label="Anexo Certidão de divórcio"
+                                >
+                                    <form:fields>
+                                        <u:FileUploader
+                                            placeholder="certidao_casamento.pdf"
+                                            tooltip="Anexe a certidão de divórcio"
+                                        />
+                                    </form:fields>
+                                </form:FormElement>
+                            </form:FormContainer>
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement label="Nome completo">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Digite o nome completo"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement
+                                        label="Data de nascimento"
+                                    >
+                                        <form:fields>
+                                            <DatePicker
+                                                placeholder="dd/mm/aaaa"
+                                                displayFormat="dd/MM/yyyy"
+                                                valueFormat="yyyy-MM-dd"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="Nome completo">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Digite o nome completo"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="CPF">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="000.000.000-00"
+                                                valueLiveUpdate="true"
+                                                liveChange=".onCpfMaskChange"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+                </WizardStep>
+                <WizardStep
+                    validated="true"
+                    title="Contatos de emergência"
+                >
+                    <form:Form editable="true">
+                        <form:layout>
+                            <form:ResponsiveGridLayout
+                                labelSpanXL="4"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="0"
+                                emptySpanL="4"
+                                emptySpanM="0"
+                                emptySpanS="0"
+                                columnsXL="2"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </form:layout>
+
+                        <form:formContainers>
+                            <form:FormContainer>
+                                <form:formElements>
+                                    <form:FormElement label="Nome completo">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="Digite o nome completo"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="Telefone">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="11-99999-8888"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="E-mail">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="contato@email.com"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement>
+                                        <form:fields>
+                                            <Button
+                                                text="Adicionar"
+                                                type="Emphasized"
+                                                press=".onAddDependente"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="L1 M4 S6"
+                                                        moveForward="L7"
+                                                        linebreak="true"
+                                                    />
+                                                </layoutData>
+                                            </Button>
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+
+                    <Table
+                        inset="false"
+                        width="auto"
+                        class="sapUiLargeMarginBottom"
+                    >
+                        <columns>
+                            <Column>
+                                <Text text="Nome Completo" />
+                            </Column>
+                            <Column>
+                                <Text text="Telefone" />
+                            </Column>
+                            <Column>
+                                <Text text="E-mail" />
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="Maria Azevedo" />
+                                    <Text text="11-99999-8888" />
+                                    <Text text="maria@email.com" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </WizardStep>
+            </Wizard>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    text="Cancel"
+                    press="handleWizardCancel"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
