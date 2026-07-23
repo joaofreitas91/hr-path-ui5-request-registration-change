@@ -1,15 +1,13 @@
-sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/m/MessageBox"], (
-  Controller,
-  JSONModel,
-  MessageBox
-) => {
+sap.ui.define([
+  "sap/ui/core/mvc/Controller",
+  "sap/ui/model/json/JSONModel",
+  "sap/m/MessageBox",
+  "com/aegea/requestregistrationchange/model/models"
+], (Controller, JSONModel, MessageBox, models) => {
   "use strict";
 
   return Controller.extend("com.aegea.requestregistrationchange.controller.Form", {
     onInit() {
-      const oAddressModel = new JSONModel(this._getInitialAddressData());
-      this.getView().setModel(oAddressModel, "address");
-
       const oUserModel = new JSONModel({ displayName: "" });
       this.getView().setModel(oUserModel, "user");
 
@@ -57,7 +55,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap
       const [oFile] = oEvent.getParameter("files") || [];
 
       if (!oFile) {
-        oAddressModel.setData(this._getInitialAddressData());
+        oAddressModel.setData(models.createAddressData());
         return;
       }
 
@@ -115,20 +113,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap
       } finally {
         this.getView().setBusy(false);
       }
-    },
-
-    _getInitialAddressData() {
-      return {
-        postalCode: "",
-        neighborhood: "",
-        city: "",
-        state: "",
-        street: "",
-        streetNumber: "",
-        complement: "",
-        documentUploaded: false,
-        showFields: false,
-      };
     },
 
     _updateAddressFromExtraction(aHeaderFields = []) {

@@ -14,6 +14,24 @@ function (JSONModel, Device) {
             var oModel = new JSONModel(Device);
             oModel.setDefaultBindingMode("OneWay");
             return oModel;
+        },
+
+        /**
+         * Initial data for the "address" model, shared across the Form and Review pages.
+         * @returns {object} The initial address data.
+         */
+        createAddressData: function () {
+            return {
+                postalCode: "",
+                neighborhood: "",
+                city: "",
+                state: "",
+                street: "",
+                streetNumber: "",
+                complement: "",
+                documentUploaded: false,
+                showFields: false
+            };
         }
     };
 

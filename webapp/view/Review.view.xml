@@ -1,4 +1,5 @@
 <mvc:View
+    controllerName="com.aegea.requestregistrationchange.controller.Review"
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:form="sap.ui.layout.form"
@@ -16,38 +17,28 @@
                 layout="ResponsiveGridLayout"
             >
                 <form:content>
-                    <Label text="Documento" />
-                    <Link
-                        text="conta_de_luz.jpeg"
-                        href="https://example.com/conta_de_luz.jpeg"
-                        target="_blank"
-                    />
                     <Label text="CEP" />
-                    <Text text="01451-907" />
+                    <Text text="{address>/postalCode}" />
                     <Label text="Logradouro/Nº" />
                     <HBox>
-                        <Text text="Avenida Brigadeiro Faria Lima" />
+                        <Text text="{address>/street}" />
                         <Text
-                            text="1912"
+                            text="{address>/streetNumber}"
                             class="sapUiTinyMarginBegin"
                         />
                     </HBox>
                     <Label text="Complemento" />
-                    <Text text="Próximo ao Shopping Iguatemi" />
+                    <Text text="{address>/complement}" />
                     <Label text="Bairro/Cidade" />
                     <HBox>
-                        <Text text="Jardim Paulistano" />
+                        <Text text="{address>/neighborhood}" />
                         <Text
-                            text="São Paulo"
+                            text="{address>/city}"
                             class="sapUiTinyMarginBegin"
                         />
                     </HBox>
                     <Label text="Estado" />
-                    <Text text="São Paulo (SP)" />
-                    <Link
-                        text="Editar"
-                        press="editEndereco"
-                    />
+                    <Text text="{address>/state}" />
                 </form:content>
             </form:SimpleForm>
 
@@ -70,10 +61,6 @@
                     <Text text="Universidade de São Paulo (USP)" />
                     <Label text="Ano de conclusão" />
                     <Text text="2025" />
-                    <Link
-                        text="Editar"
-                        press="editGraduacao"
-                    />
                 </form:content>
             </form:SimpleForm>
 
@@ -116,10 +103,6 @@
                     <Text text="123 4567 8901 2345" />
                     <Label text="Elegível para IR" />
                     <Text text="Sim" />
-                    <Link
-                        text="Editar"
-                        press="editDependentes"
-                    />
                 </form:content>
             </form:SimpleForm>
 
@@ -160,10 +143,6 @@
                     <Text text="987 6543 2109 8765" />
                     <Label text="Elegível para IR" />
                     <Text text="Sim" />
-                    <Link
-                        text="Editar"
-                        press="editConjuge"
-                    />
                 </form:content>
             </form:SimpleForm>
 
@@ -186,10 +165,6 @@
                     <Text text="20/09/1985" />
                     <Label text="CPF" />
                     <Text text="222.333.444-55" />
-                    <Link
-                        text="Editar"
-                        press="editDivorcio"
-                    />
                 </form:content>
             </form:SimpleForm>
 
@@ -206,10 +181,6 @@
                     <Text text="(11) 99999-8888" />
                     <Label text="E-mail" />
                     <Text text="maria.azevedo@email.com" />
-                    <Link
-                        text="Editar"
-                        press="editContatoEmergencia"
-                    />
                 </form:content>
             </form:SimpleForm>
         </content>

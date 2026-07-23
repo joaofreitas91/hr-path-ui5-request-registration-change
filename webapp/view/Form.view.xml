@@ -729,6 +729,7 @@
                     </form:Form>
                 </WizardStep>
                 <WizardStep
+                    id="Emergency"
                     validated="true"
                     title="Contatos de emergência"
                 >

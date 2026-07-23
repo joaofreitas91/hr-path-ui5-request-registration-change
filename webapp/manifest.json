@@ -98,7 +98,7 @@
         },
         {
           "name": "RouteReview",
-          "pattern": "/review",
+          "pattern": "review",
           "target": [
             "TargetReview"
           ]

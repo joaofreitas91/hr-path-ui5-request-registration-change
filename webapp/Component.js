@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
+    "sap/ui/model/json/JSONModel",
     "com/aegea/requestregistrationchange/model/models"
-], (UIComponent, models) => {
+], (UIComponent, JSONModel, models) => {
     "use strict";
 
     return UIComponent.extend("com.aegea.requestregistrationchange.Component", {
@@ -18,6 +19,9 @@ sap.ui.define([
 
             // set the device model
             this.setModel(models.createDeviceModel(), "device");
+
+            // set the address model, shared between the Form and Review pages
+            this.setModel(new JSONModel(models.createAddressData()), "address");
 
             // enable routing
             this.getRouter().initialize();
