@@ -15,6 +15,10 @@ server:
             - /resources
             - /test-resources
           url: https://ui5.sap.com
+        backend:
+          - path: /document-information-extraction
+            url: https://aiservices-dox.cfapps.us10.hana.ondemand.com
+            destination: document-ai-dest
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

@@ -15,6 +15,12 @@
       "destination": "ui5"
     },
     {
+      "source": "^/document-information-extraction/(.*)$",
+      "target": "/document-information-extraction/$1",
+      "destination": "document-ai-dest",
+      "authenticationType": "xsuaa"
+    },
+    {
       "source": "^(.*)$",
       "target": "$1",
       "service": "html5-apps-repo-rt",

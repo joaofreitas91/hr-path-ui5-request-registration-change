@@ -19,13 +19,24 @@
                 complete="wizardCompletedHandler"
             >
                 <WizardStep
-                    id="ProductTypeStep"
+                    id="AddressStep"
                     title="Dados de endereço"
-                    validated="true"
+                    validated="{
+                        parts: [
+                            'address>/documentUploaded',
+                            'address>/postalCode',
+                            'address>/street',
+                            'address>/streetNumber',
+                            'address>/neighborhood',
+                            'address>/city',
+                            'address>/state'
+                        ],
+                        formatter: '.formatAddressStepValidated'
+                    }"
                 >
                     <form:Form
                         editable="true"
-                        ariaLabelledBy="Title1"
+                        ariaLabelledBy="Onboarding Form"
                     >
                         <form:layout>
                             <form:ResponsiveGridLayout
@@ -52,21 +63,31 @@
                                             <u:FileUploader
                                                 placeholder="conta_de_luz.jpeg"
                                                 tooltip="Comprovante de residência (Luz ou Água)"
+                                                fileType="pdf,jpg,jpeg,png"
+                                                typeMissmatch="onAddressDocumentTypeMismatch"
+                                                change="onAddressDocumentChange"
                                             />
                                         </form:fields>
                                     </form:FormElement>
                                 </form:formElements>
                             </form:FormContainer>
-                            <form:FormContainer>
+                            <form:FormContainer visible="{address>/showFields}">
                                 <form:formElements>
                                     <form:FormElement label="CEP">
                                         <form:fields>
-                                            <Input placeholder="01451-907">
-                                                <layoutData>
+                                            <Input
+                                                placeholder="01451-907"
+                                                value="{address>/postalCode}"
+                                                maxLength="9"
+                                                valueLiveUpdate="true"
+                                                liveChange="onPostalCodeChange"
+                                                required="true"
+                                            >
+                                                <!-- <layoutData>
                                                     <l:GridData
                                                         span="XL2 L1 M3 S4"
                                                     />
-                                                </layoutData>
+                                                </layoutData> -->
                                             </Input>
                                         </form:fields>
                                     </form:FormElement>
@@ -74,8 +95,17 @@
                                         <form:fields>
                                             <Input
                                                 placeholder="Avenida Brigadeiro Faria Lima"
+                                                value="{address>/street}"
+                                                required="true"
                                             />
-                                            <Input placeholder="1912">
+                                            <Input
+                                                placeholder="1912"
+                                                value="{address>/streetNumber}"
+                                                maxLength="6"
+                                                valueLiveUpdate="true"
+                                                liveChange="onStreetNumberChange"
+                                                required="true"
+                                            >
                                                 <layoutData>
                                                     <l:GridData
                                                         span="XL2 L1 M3 S4"
@@ -88,48 +118,35 @@
                                         <form:fields>
                                             <Input
                                                 placeholder="Próximo ao Shopping Iguatemi"
+                                                value="{address>/complement}"
                                             />
                                         </form:fields>
                                     </form:FormElement>
-                                    <form:FormElement label="Bairro/Cidade">
+                                    <form:FormElement label="Bairro">
                                         <form:fields>
                                             <Input
                                                 placeholder="Jardim Paulistano"
-                                            >
-                                                <layoutData>
-                                                    <l:GridData
-                                                        span="XL2 L1 M3 S4"
-                                                    />
-                                                </layoutData>
-                                            </Input>
-                                            <Input placeholder="São Paulo" />
+                                                value="{address>/neighborhood}"
+                                                required="true"
+                                            />
+                                        </form:fields>
+                                    </form:FormElement>
+                                    <form:FormElement label="Cidade">
+                                        <form:fields>
+                                            <Input
+                                                placeholder="São Paulo"
+                                                value="{address>/city}"
+                                                required="true"
+                                            />
                                         </form:fields>
                                     </form:FormElement>
                                     <form:FormElement label="Estado">
                                         <form:fields>
-                                            <Select
-                                                width="100%"
-                                                selectedKey="Brasil"
-                                            >
-                                                <items>
-                                                    <core:Item
-                                                        text="Brasil"
-                                                        key="Brasil"
-                                                    />
-                                                    <core:Item
-                                                        text="Alemanha"
-                                                        key="Alemanha"
-                                                    />
-                                                    <core:Item
-                                                        text="USA"
-                                                        key="USA"
-                                                    />
-                                                    <core:Item
-                                                        text="Inglaterra"
-                                                        key="Inglaterra"
-                                                    />
-                                                </items>
-                                            </Select>
+                                            <Input
+                                                placeholder="SP"
+                                                value="{address>/state}"
+                                                required="true"
+                                            />
                                         </form:fields>
                                     </form:FormElement>
                                 </form:formElements>
