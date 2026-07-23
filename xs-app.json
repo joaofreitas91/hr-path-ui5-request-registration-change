@@ -23,7 +23,8 @@
       "source": "^/document-information-extraction/(.*)$",
       "target": "/document-information-extraction/$1",
       "destination": "document-ai-dest",
-      "authenticationType": "xsuaa"
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
     },
     {
       "source": "^(.*)$",
