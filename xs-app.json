@@ -21,6 +21,11 @@
       "authenticationType": "xsuaa"
     },
     {
+      "source": "^/user-api/(.*)$",
+      "target": "/user-api/$1",
+      "authenticationType": "xsuaa"
+    },
+    {
       "source": "^(.*)$",
       "target": "$1",
       "service": "html5-apps-repo-rt",

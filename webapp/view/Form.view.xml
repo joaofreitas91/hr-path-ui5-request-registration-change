@@ -19,6 +19,22 @@
                 complete="wizardCompletedHandler"
             >
                 <WizardStep
+                    id="WelcomeStep"
+                    title="Introdução"
+                    validated="true"
+                >
+                    <VBox class="sapUiMediumMarginTop sapUiMediumMarginBottom">
+                        <Title
+                            text="{= ${user>/displayName} ? ('Bem-vindo, ' + ${user>/displayName} + '!') : 'Bem-vindo!' }"
+                            level="H1"
+                            class="sapUiSmallMarginBottom"
+                        />
+                        <Text
+                            text="Este é o processo de onboarding da sua contratação. Nas próximas etapas você vai precisar preencher alguns dados e anexar documentos importantes para concluir o seu cadastro, como comprovante de endereço, diploma, dados de dependentes (se houver), dados do cônjuge ou ex-cônjuge (quando aplicável) e contatos de emergência. Separe os documentos necessários antes de começar para agilizar o preenchimento. Quando estiver pronto, avance para a próxima etapa."
+                        />
+                    </VBox>
+                </WizardStep>
+                <WizardStep
                     id="AddressStep"
                     title="Dados de endereço"
                     validated="{
@@ -811,7 +827,7 @@
                 </WizardStep>
             </Wizard>
         </content>
-        <footer>
+        <!-- <footer>
             <OverflowToolbar>
                 <ToolbarSpacer />
                 <Button
@@ -819,6 +835,6 @@
                     press="handleWizardCancel"
                 />
             </OverflowToolbar>
-        </footer>
+        </footer> -->
     </Page>
 </mvc:View>
