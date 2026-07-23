@@ -13,12 +13,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap
       const oUserModel = new JSONModel({ displayName: "" });
       this.getView().setModel(oUserModel, "user");
 
-      fetch("/user-api/currentUser")
+      const userUrl = this.getOwnerComponent()
+        .getManifestObject()
+        .resolveUri("user-api/currentUser");
+
+      fetch(userUrl)
         .then((oResponse) => (oResponse.ok ? oResponse.json() : null))
         .then((oData) => {
           const sDisplayName = oData && (oData.givenName || oData.name || oData.email);
           if (sDisplayName) {
-            oUserModel.setProperty("/displayName", sDisplayName);
+            oUserModel.setProperty("/displayName", `${oData.firstname} ${oData.lastname}`);
           }
         })
         .catch((oError) => {
